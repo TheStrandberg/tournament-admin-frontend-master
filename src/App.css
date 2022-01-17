@@ -1,0 +1,70 @@
+body {
+  background-color: rgb(179, 56, 179);
+}
+
+.navbar {
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  column-gap: 5%;
+}
+
+.navbar a {
+  color: rgb(79, 192, 212);
+  text-decoration: none;
+  font-size: 1.4rem;
+}
+
+
+.navbar a:hover {
+  color: rgb(27, 62, 68);
+  text-decoration: underline;
+}
+
+.routes {
+  color: white;
+}
+
+.single-tournament {
+  text-align: center;
+}
+
+.single-tournament p {
+  color: red;
+  font-style: italic;
+}
+
+.single-tournament h1 {
+  line-height: 2rem;
+}
+
+.single-tournament h2 {
+  line-height: .5rem;
+  color: teal;
+}
+
+.single-tournament h4 {
+  line-height: 3px;
+  color: brown;
+}
+
+.single-tournament h3 {
+  line-height: 3px;
+  color: grey;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+  margin-top: 4rem;
+  /* margin-left: 1rem; */
+  padding: 1rem;
+  background-color: bisque;
+}
+
+.input {
+  text-align: center;
+}
