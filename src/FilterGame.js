@@ -44,4 +44,4 @@ async function GetTournaments() {
     )
 }
 
-export default FilterGame
+export default FilterGame;
