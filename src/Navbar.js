@@ -1,16 +1,16 @@
 import React from 'react'
-import {Link} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 import './App.css';
 
-function Navbar() {
+function Navigationbar() {
     return (
         <div className="navbar">
-            <h1><Link to="/">Home</Link></h1>
-            <h1><Link to="/filter-games">Filter on Games</Link></h1>
-            <h1><Link to="/filter-names">Filter on Tournament Names</Link></h1>
-            <h1><Link to="/filter-venues">Filter on Tournament Venues</Link></h1>
+            <h1><NavLink exact to="/" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>Home</NavLink></h1>
+            <h1><NavLink exact to="/filter-games/" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>Filter on Games</NavLink></h1>
+            <h1><NavLink to="/filter-names" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>Filter on Tournament Names</NavLink></h1>
+            <h1><NavLink to="/filter-venues" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>Filter on Tournament Venues</NavLink></h1>
         </div>
     )
 }
 
-export default Navbar
+export default Navigationbar

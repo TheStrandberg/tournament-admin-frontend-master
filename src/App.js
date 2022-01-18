@@ -17,8 +17,8 @@ function App() {
     <Navbar />
     <div className='routes'>
       <Routes>
-        <Route path="/" element={ <Home /> } exact />
-        <Route path="/filter-games" element={ <FilterGame /> } />
+        <Route exact path="/" element={ <Home /> } />
+        <Route path="/filter-games/" element={ <FilterGame /> } />
         <Route path="/filter-names" element={ <FilterName /> } />
         <Route path="/filter-venues" element={ <FilterVenue /> } />
       </Routes>

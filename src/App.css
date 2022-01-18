@@ -11,17 +11,20 @@ body {
   column-gap: 5%;
 }
 
+.navbar .active {
+  color: black;
+}
+
 .navbar a {
   color: rgb(79, 192, 212);
   text-decoration: none;
   font-size: 1.4rem;
 }
 
-
-.navbar a:hover {
-  color: rgb(27, 62, 68);
+/* .navbar a:hover {
+  color: rgb(64, 116, 126);
   text-decoration: underline;
-}
+} */
 
 .routes {
   color: white;
@@ -68,3 +71,4 @@ body {
 .input {
   text-align: center;
 }
+

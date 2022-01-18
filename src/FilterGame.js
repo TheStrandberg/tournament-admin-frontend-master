@@ -32,7 +32,8 @@ async function GetTournaments() {
 
     return (
         <div className="input">
-         Game <input type="text" id="input-name"/> 
+         Search Term <input type="text" id="input-name"/> 
+         <p></p>
         <button className="search-btn" onClick={ GetTournaments }>
         Get Tournaments
         </button>
