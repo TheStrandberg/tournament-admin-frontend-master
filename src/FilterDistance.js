@@ -6,7 +6,7 @@ import "./App.css"
 // import DisplayTournaments from './DisplayTournaments'
 const api = 'https://localhost:44335/api/';
 
-function FilterGame({  }) {
+function FilterDistance({  }) {
 
     const [tournamentState, setTournaments] = useState([]);
 
@@ -15,7 +15,7 @@ async function GetTournaments() {
   var url = "";
 
     if (input !== "") {
-      url = api + "games/" + input;
+      url = api + "Tournaments/near?distance=" + input + "&latitude=59.000000&longitude=18.000000";
     }
     else {
         url = "https://localhost:44335/api/Tournaments";
@@ -32,7 +32,7 @@ async function GetTournaments() {
 
     return (
         <div className="input">
-         Search Term <input type="text" id="input-name"/> 
+         Distance in km <input type="text" id="input-name"/> 
          <p></p>
         <button className="search-btn" onClick={ GetTournaments }>
         Get Tournaments
@@ -44,4 +44,4 @@ async function GetTournaments() {
     )
 }
 
-export default FilterGame;
+export default FilterDistance;

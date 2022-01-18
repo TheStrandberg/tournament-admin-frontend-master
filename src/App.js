@@ -6,13 +6,13 @@ import Navbar from './Navbar';
 import Home from './Home';
 import FilterGame from './FilterGame';
 import FilterName from './FilterName';
-import FilterVenue from "./FilterVenue"
+import FilterVenue from "./FilterVenue";
+import FilterDistance from "./FilterDistance";
+
 import './App.css';
 
 function App() {
   // const [tournamentState, setTournaments] = useState([]);
-
-  // COMMENT FOR TEST PUSH
 
   return (
     <div className="App">
@@ -23,6 +23,7 @@ function App() {
         <Route path="/filter-games/" element={ <FilterGame /> } />
         <Route path="/filter-names" element={ <FilterName /> } />
         <Route path="/filter-venues" element={ <FilterVenue /> } />
+        <Route path="/filter-distance" element={ <FilterDistance /> } />
       </Routes>
     {/* <GetTournaments setTournaments={setTournaments}/>  */}
     {/* <DisplayTournaments tournaments={tournamentState}/>   */}
