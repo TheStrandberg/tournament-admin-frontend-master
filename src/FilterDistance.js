@@ -1,21 +1,42 @@
 import React from 'react'
-import { useState} from 'react';
+import { useState, useEffect } from 'react';
 import DisplayTournaments from './DisplayTournaments';
 import "./App.css"
 // import GetTournaments from './GetTournaments'
 // import DisplayTournaments from './DisplayTournaments'
 const api = 'https://localhost:44335/api/';
+let userLatitude = 0;
+let userLongitude = 0;
 
 function FilterDistance({  }) {
 
-    const [tournamentState, setTournaments] = useState([]);
+  const [tournamentState, setTournaments] = useState([]);
+  
+  useEffect(() => {
+    async function getLocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition((position) => {
+            setUserCoordinates(position.coords.latitude, position.coords.longitude);            
+        });
+      } else {
+          alert("Can not get position")
+      }
+    }
 
-async function GetTournaments() {    
+    function setUserCoordinates(latitude, longitude) {
+      userLatitude = latitude;
+      userLongitude = longitude;
+  }
+
+    getLocation();
+  }, []);
+
+  async function GetTournaments() {    
   let input = document.querySelector("input").value;
-  var url = "";
+  var url = "";    
 
     if (input !== "") {
-      url = api + "Tournaments/near?distance=" + input + "&latitude=59.000000&longitude=18.000000";
+      url = api + `Tournaments/near?distance=${input}&latitude=${userLatitude}&longitude=${userLongitude}`;
     }
     else {
         url = "https://localhost:44335/api/Tournaments";
