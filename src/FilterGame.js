@@ -31,15 +31,15 @@ async function GetTournaments() {
   }
 
     return (
+        <div>
         <div className="input">
-         Search Term <input type="text" id="input-name"/> 
-         <p></p>
+        Search Games <input type="text" id="input-name"/> 
         <button className="search-btn" onClick={ GetTournaments }>
-        Get Tournaments
+        Search
         </button>
         {/* <GetTournaments setTournaments={setTournaments}/>   */}
+        </div>
         <DisplayTournaments tournaments={tournamentState}/>
-      
         </div>
     )
 }

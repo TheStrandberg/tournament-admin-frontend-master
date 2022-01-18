@@ -10,12 +10,12 @@ function DisplayTournaments( { tournaments }) {
       tournamentName: searchObject.tournamentName,
       description: searchObject.description,
       game: searchObject.game,
-      eventTime: searchObject.eventTime,
+      eventTime: searchObject.eventTime.toString().slice(0, 10),
       venue: searchObject.venue,
     }
   }
 
-    return (
+  return (
       <div className="grid">
      {tournaments.map(convertTournament)
       .map((tournament) => {
