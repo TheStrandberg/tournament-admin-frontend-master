@@ -12,6 +12,8 @@ import './App.css';
 function App() {
   // const [tournamentState, setTournaments] = useState([]);
 
+  // COMMENT FOR TEST PUSH
+
   return (
     <div className="App">
     <Navbar />
