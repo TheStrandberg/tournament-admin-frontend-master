@@ -23,7 +23,7 @@ function App() {
         <Route path="/" element={ <Home /> } exact/>
         <Route path="/filter-games" element={ <FilterTournaments /> } />
       </Routes>
-      <FilterTournaments />
+      {/* <FilterTournaments /> */}
     {/* <GetTournaments setTournaments={setTournaments}/>  */}
     {/* <DisplayTournaments tournaments={tournamentState}/>   */}
     </div>

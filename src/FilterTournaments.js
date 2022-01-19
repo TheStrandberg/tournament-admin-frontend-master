@@ -9,35 +9,7 @@ let userLatitude = 0;
 let userLongitude = 0;
 
 function FilterTournaments({  }) {
-
-    const [tournamentState, setTournaments] = useState([]);
-
-async function GetTournaments() {    
-  let inputName = document.getElementById("input-name").value;
-  let inputGame = document.getElementById("input-game").value;
-  let inputVenue = document.getElementById("input-venue").value;
-  let inputCountry = document.getElementById("input-country").value;
-  let inputCity = document.getElementById("input-city").value;
-  let inputDistance = document.getElementById("input-distance").value;
-
-  if (inputName !== "") {
-    api += inputName + "&";
-  }
-  if (inputGame !== "") {
-    api += inputGame + "&";
-  }
-  if (inputVenue !== "") {
-    api += inputVenue + "&";
-  }
-  if (inputCountry !== "") {
-    api += inputCountry + "&";
-  }
-  if (inputCity !== "") {
-    api += inputCity + "&";
-  }
-  if (inputDistance !== "") {
-    api += `/near?distance=${inputDistance}&latitude=${userLatitude}&longitude=${userLongitude}`;
-  }
+  const [tournamentState, setTournaments] = useState([]);
 
   useEffect(() => {
     async function getLocation() {
@@ -57,6 +29,33 @@ async function GetTournaments() {
 
     getLocation();
   }, []);
+
+async function GetTournaments() {    
+  let inputName = document.getElementById("input-name").value;
+  let inputGame = document.getElementById("input-game").value;
+  let inputVenue = document.getElementById("input-venue").value;
+  let inputCountry = document.getElementById("input-country").value;
+  let inputCity = document.getElementById("input-city").value;
+  let inputDistance = document.getElementById("input-distance").value;
+
+  if (inputName !== "") {
+    api += `name=${inputName}&`;
+  }
+  if (inputGame !== "") {
+    api += `game=${inputGame}&`;
+  }
+  if (inputVenue !== "") {
+    api += `venue=${inputVenue}&`;
+  }
+  if (inputCountry !== "") {
+    api += `country=${inputCountry}&`;
+  }
+  if (inputCity !== "") {
+    api += `city=${inputCity}&`;
+  }
+  if (inputDistance !== "") {
+    api += `distance=${inputDistance}&latitude=${userLatitude}&longitude=${userLongitude}`;
+  }  
     
     const response = await fetch(api, {
     method: 'GET',
