@@ -4,7 +4,7 @@ import DisplayTournaments from './DisplayTournaments';
 import "./App.css"
 import { Routes, Route } from 'react-router-dom';
 import TournamentDetail from './TournamentDetail';
-let api = 'https://localhost:44335/api/Tournaments?';
+const api = 'https://localhost:44335/api/Tournaments?';
 let userLatitude = 0;
 let userLongitude = 0;
 
@@ -38,26 +38,31 @@ async function GetTournaments() {
   let inputCity = document.getElementById("input-city").value;
   let inputDistance = document.getElementById("input-distance").value;
 
+  let url = api;
+
   if (inputName !== "") {
-    api += `name=${inputName}&`;
+    url += `name=${inputName}&`;
   }
   if (inputGame !== "") {
-    api += `game=${inputGame}&`;
+    url += `game=${inputGame}&`;
   }
   if (inputVenue !== "") {
-    api += `venue=${inputVenue}&`;
+    url += `venue=${inputVenue}&`;
   }
   if (inputCountry !== "") {
-    api += `country=${inputCountry}&`;
+    url += `country=${inputCountry}&`;
   }
   if (inputCity !== "") {
-    api += `city=${inputCity}&`;
+    url += `city=${inputCity}&`;
   }
   if (inputDistance !== "") {
-    api += `distance=${inputDistance}&latitude=${userLatitude}&longitude=${userLongitude}`;
+    url += `distance=${inputDistance}&latitude=${userLatitude}&longitude=${userLongitude}`;
   }  
+
+  url = url.slice(0, -1);
+  console.log(url);
     
-    const response = await fetch(api, {
+    const response = await fetch(url, {
     method: 'GET',
     headers: {'Content-Type': 'application/json'},
     })
@@ -74,7 +79,7 @@ async function GetTournaments() {
         Tournament Venue <input type="text" id="input-venue"/> 
         Tournament Country <input type="text" id="input-country"/> 
         Tournament City <input type="text" id="input-city"/> 
-        Tournament Distance <input type="text" id="input-distance"/> 
+        Tournament Distance <input type="text" id="input-distance"/>
         <button className="search-btn" onClick={ GetTournaments }>
         Search
         </button>
