@@ -8,7 +8,7 @@ const api = 'https://localhost:44335/api/Tournaments?';
 let userLatitude = 0;
 let userLongitude = 0;
 
-function FilterTournaments({  }) {
+function FilterTournaments() {
   const [tournamentState, setTournaments] = useState([]);
 
   useEffect(() => {
@@ -56,7 +56,7 @@ async function GetTournaments() {
     url += `city=${inputCity}&`;
   }
   if (inputDistance !== "") {
-    url += `distance=${inputDistance}&latitude=${userLatitude}&longitude=${userLongitude}`;
+    url += `distance=${inputDistance}&latitude=${userLatitude}&longitude=${userLongitude}&`;
   }  
 
   url = url.slice(0, -1);
@@ -85,9 +85,6 @@ async function GetTournaments() {
         </button>
         </div>
         <DisplayTournaments tournaments={tournamentState}/>
-        <Routes>
-        <Route path="/filter-games:/id" element={ <TournamentDetail />} />
-        </Routes>
         </div>
     )
 }

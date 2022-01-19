@@ -1,5 +1,6 @@
 import React from 'react'
 import TournamentComponent from './TournamentComponent';
+import TournamentDetail from './TournamentDetail';
 import { Link } from 'react-router-dom';
 import "./App.css"
 
@@ -20,7 +21,7 @@ function DisplayTournaments( { tournaments }) {
       <div className="grid">
       {tournaments.map(convertTournament)
       .map((tournament) => {
-        return <Link to={`/${tournament.id}`} key={tournament.id}> <TournamentComponent tournamentName={tournament.tournamentName}  description={tournament.description} 
+        return <Link to={`/${tournament.id}`} key={tournament.id}> <TournamentComponent tournamentName={tournament.tournamentName} description={tournament.description} 
         eventTime={tournament.eventTime} 
         venue={tournament.venue}
         game={tournament.game}/>

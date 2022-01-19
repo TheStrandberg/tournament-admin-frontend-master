@@ -4,6 +4,7 @@
 import {Routes, Route} from "react-router-dom";
 import Navbar from './Navbar';
 import Home from './Home';
+import TournamentDetail from "./TournamentDetail";
 // import FilterGame from './FilterTournaments';
 // import FilterName from './FilterName';
 // import FilterVenue from "./FilterVenue";
@@ -20,10 +21,10 @@ function App() {
     <Navbar />
     <div className='routes'>
       <Routes>
-        <Route path="/" element={ <Home /> } exact/>
-        <Route path="/filter-games" element={ <FilterTournaments /> } />
+        {/* <Route path="/" element={ <Home /> } exact/> */}
+        <Route path="/" element={ <FilterTournaments /> } exact />
+        <Route path="/:id" element={ <TournamentDetail />} />
       </Routes>
-      <FilterTournaments />
     {/* <GetTournaments setTournaments={setTournaments}/>  */}
     {/* <DisplayTournaments tournaments={tournamentState}/>   */}
     </div>
