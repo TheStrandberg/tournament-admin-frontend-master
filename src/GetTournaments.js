@@ -1,6 +1,6 @@
 import React from 'react';
 // import TournamentComponent from './TournamentComponent';
-import FilterGame from './FilterGame';
+import FilterGame from './FilterTournaments';
 const api = 'https://localhost:44335/api/';
 
 function GetTournaments( { setTournaments, tournaments }) {

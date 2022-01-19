@@ -1,5 +1,6 @@
 import React from 'react'
 import TournamentComponent from './TournamentComponent';
+import { Link } from 'react-router-dom';
 import "./App.css"
 
 function DisplayTournaments( { tournaments }) {
@@ -17,17 +18,14 @@ function DisplayTournaments( { tournaments }) {
 
   return (
       <div className="grid">
-     {tournaments.map(convertTournament)
+      {tournaments.map(convertTournament)
       .map((tournament) => {
-        return <TournamentComponent 
-        key={tournament.id} 
-        tournamentName={tournament.tournamentName} 
-        description={tournament.description} 
+        return <Link to={`/${tournament.id}`} key={tournament.id}> <TournamentComponent tournamentName={tournament.tournamentName}  description={tournament.description} 
         eventTime={tournament.eventTime} 
         venue={tournament.venue}
         game={tournament.game}/>
-      })
-      }
+        </Link>
+      })}
       </div>
     );
   }
