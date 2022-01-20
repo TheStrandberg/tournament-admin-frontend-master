@@ -17,21 +17,9 @@ function TournamentDetail() {
       const tournamentObject = await response.json();
       console.log(tournamentObject);
       setTournament(tournamentObject);
-      // convertTournament();
     }
     getTournament();
   }, []);
-
-  // function convertTournament(searchObject) {
-  //   return {
-  //     id: searchObject.id,
-  //     tournamentName: searchObject.tournamentName,
-  //     description: searchObject.description,
-  //     game: searchObject.game,
-  //     eventTime: searchObject.eventTime.toString().slice(0, 10),
-  //     venue: searchObject.venue,
-  //   }
-  // }
 
   return (
     <div className="tournament-detail">
