@@ -39,7 +39,8 @@ async function getTournaments() {
   let inputCountry = document.getElementById("input-country").value;
   let inputCity = document.getElementById("input-city").value;
   let inputDistance = document.getElementById("input-distance").value;
-  let inputDate = document.getElementById("input-date").value;
+  let inputFromDate = document.getElementById("input-fromDate").value;
+  let inputToDate = document.getElementById("input-toDate").value;
 
   let url = api;
 
@@ -61,10 +62,14 @@ async function getTournaments() {
   if (inputDistance !== "") {
     url += `distance=${inputDistance}&latitude=${userLatitude}&longitude=${userLongitude}&`;
   }
-  if (inputDate !== "") {
-    url += `date=${inputDate}&`;
+  if (inputFromDate !== "") {
+    url += `fromDate=${inputFromDate}&`;
+  }
+  if (inputToDate !== "") {
+    url += `toDate=${inputToDate}&`;
   }
 
+  // We can always remove the last symbol (a ? or &) and still have a valid URL.
   url = url.slice(0, -1);
   console.log(url);
     
@@ -87,6 +92,7 @@ async function getTournaments() {
         <div>
         
         <div className="input">
+<<<<<<< Updated upstream
         <p>Filter options...</p>
         <input type="text" id="input-name" placeholder="Tournament Name"/> 
         <input type="text" id="input-game" placeholder="Game"/> 
@@ -96,6 +102,16 @@ async function getTournaments() {
         <input type="date" id="input-startdate" placeholder="Start Date"/>
         <input type="date" id="input-enddate" placeholder="End Date"/>
         <input type="text" id="input-distance" placeholder="Distance from your location"/>
+=======
+        Tournament Name <input type="text" id="input-name"/> 
+        Tournament Game <input type="text" id="input-game"/> 
+        Tournament Venue <input type="text" id="input-venue"/> 
+        Tournament Country <input type="text" id="input-country"/> 
+        Tournament City <input type="text" id="input-city"/> 
+        Tournament Distance <input type="text" id="input-distance"/>
+        Tournament Date from <input type="date" id="input-fromDate"/>
+        Tournament Date to <input type="date" id="input-toDate"/>
+>>>>>>> Stashed changes
         <button className="search-btn" onClick={ getTournaments }>
         Search</button>
         <button className="search-btn" onClick={clearSearchFields}>
