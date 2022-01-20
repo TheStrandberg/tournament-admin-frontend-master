@@ -1,6 +1,5 @@
 import {Routes, Route} from "react-router-dom";
 import TournamentDetail from "./TournamentDetail";
-
 import './App.css';
 import FilterTournaments from './FilterTournaments';
 
