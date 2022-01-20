@@ -70,12 +70,9 @@ async function GetTournaments() {
   }
 
   function ClearSearchFields() {
-    document.getElementById("input-name").value = "";
-    document.getElementById("input-game").value = "";;
-    document.getElementById("input-venue").value = "";
-    document.getElementById("input-country").value = "";
-    document.getElementById("input-city").value = "";
-    document.getElementById("input-distance").value = "";
+    document.querySelectorAll("input").forEach((element) => {
+      element.value = "";
+    })
   }
 
     return (
