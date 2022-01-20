@@ -48,6 +48,10 @@ body {
   max-width: 1700px;
 }
 
+.single-tournament:hover {
+  background-color: whitesmoke;
+}
+
 .single-tournament h1 {
   color: black;
   line-height: 2rem;
