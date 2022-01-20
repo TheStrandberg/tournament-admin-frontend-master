@@ -1,5 +1,4 @@
 import {Routes, Route} from "react-router-dom";
-import Navbar from './Navbar';
 import TournamentDetail from "./TournamentDetail";
 
 import './App.css';
@@ -9,12 +8,11 @@ function App() {
 
   return (
     <div className="App">
-    <Navbar />
     <div className='routes'>
-      <Routes>
+    <Routes>
         <Route path="/" element={ <FilterTournaments /> } exact />
         <Route path="/:id" element={ <TournamentDetail />} />
-      </Routes>
+    </Routes>
     </div>
     </div>
   );

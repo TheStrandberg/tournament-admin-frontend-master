@@ -77,17 +77,19 @@ async function GetTournaments() {
 
     return (
         <div>
+        
         <div className="input">
-        Tournament Name <input type="text" id="input-name"/> 
-        Tournament Game <input type="text" id="input-game"/> 
-        Tournament Venue <input type="text" id="input-venue"/> 
-        Tournament Country <input type="text" id="input-country"/> 
-        Tournament City <input type="text" id="input-city"/> 
-        Tournament Distance <input type="text" id="input-distance"/>
+        <p>Filter options...</p>
+        <input type="text" id="input-name" placeholder="Tournament Name"/> 
+        <input type="text" id="input-game" placeholder="Game"/> 
+        <input type="text" id="input-venue" placeholder="Venue"/> 
+        <input type="text" id="input-country" placeholder="Country"/> 
+        <input type="text" id="input-city" placeholder="City"/> 
+        <input type="text" id="input-distance" placeholder="Distance from your location"/>
         <button className="search-btn" onClick={ GetTournaments }>
         Search</button>
         <button className="search-btn" onClick={ClearSearchFields}>
-        Clear</button>
+        Clear Search Fields</button>
         </div>
         <DisplayTournaments  tournaments={tournamentState}/>
         </div>
