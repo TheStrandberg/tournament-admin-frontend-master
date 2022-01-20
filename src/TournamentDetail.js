@@ -40,11 +40,10 @@ function TournamentDetail() {
             <h2>{tournament.game && tournament.game.title}</h2>
             <p>{tournament.description}</p>
             <h3>{tournament.eventTime && tournament.eventTime.toString().slice(0, 10)}</h3>
-            <h4>{tournament.venue && tournament.venue.venueName}</h4>
-            <h4>{tournament.venue && tournament.venue.address.street}</h4>
+            <h4>{tournament.venue && tournament.venue.venueName} ({tournament.venue && tournament.venue.address.street})</h4>
             <h4>{tournament.venue && tournament.venue.address.city}</h4>
             <h4>{tournament.venue && tournament.venue.address.country}</h4>
-            <ul>
+            <ul className="player-list">
               {tournament.players && tournament.players.map((player) => (
                 <li>
                   <h3 key={player.id}>{player && player.firstName} {player && player.lastName} ({player && player.gameHandle}) - {player && player.homeTown} ({player && player.countryOfOrigin})</h3>

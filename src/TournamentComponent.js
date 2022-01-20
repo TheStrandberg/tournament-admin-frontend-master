@@ -9,6 +9,7 @@ function TournamentComponent( { tournamentName, game, description, eventTime, ve
             <h2>{game && game.title}</h2>
             <p>{description}</p>
             <h3>{eventTime}</h3>
+            <h4>{venue && venue.venueName}</h4>
             <h4>{venue && venue.address.city}</h4>
             <h4>{venue && venue.address.country}</h4>
         </div>

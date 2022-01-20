@@ -2,8 +2,6 @@ import React from 'react'
 import { useState, useEffect } from 'react';
 import DisplayTournaments from './DisplayTournaments';
 import "./App.css"
-import { Routes, Route } from 'react-router-dom';
-import TournamentDetail from './TournamentDetail';
 const api = 'https://localhost:44335/api/Tournaments?';
 let userLatitude = 0;
 let userLongitude = 0;
@@ -71,6 +69,15 @@ async function GetTournaments() {
     setTournaments(tournamentArray);   
   }
 
+  function ClearSearchFields() {
+    document.getElementById("input-name").value = "";
+    document.getElementById("input-game").value = "";;
+    document.getElementById("input-venue").value = "";
+    document.getElementById("input-country").value = "";
+    document.getElementById("input-city").value = "";
+    document.getElementById("input-distance").value = "";
+  }
+
     return (
         <div>
         <div className="input">
@@ -81,10 +88,11 @@ async function GetTournaments() {
         Tournament City <input type="text" id="input-city"/> 
         Tournament Distance <input type="text" id="input-distance"/>
         <button className="search-btn" onClick={ GetTournaments }>
-        Search
-        </button>
+        Search</button>
+        <button className="search-btn" onClick={ClearSearchFields}>
+        Clear</button>
         </div>
-        <DisplayTournaments tournaments={tournamentState}/>
+        <DisplayTournaments  tournaments={tournamentState}/>
         </div>
     )
 }
