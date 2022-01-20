@@ -35,13 +35,13 @@ function TournamentDetail() {
   // }
 
   return (
-    <div>
+    <div className="tournament-detail">
       <Link to="/"><button> Back </button></Link>
-        <TournamentComponent tournamentName={tournament.tournamentName} 
-        description={tournament.description} 
-        eventTime={tournament.eventTime} 
-        venue={tournament.venue}
-        game={tournament.game && tournament.game.title}/>
+      <h1>{tournament.tournamentName}</h1>
+            <h2>{tournament.game && tournament.game.title}</h2>
+            <p>{tournament.description}</p>
+            <h3>{tournament.eventTime}</h3>
+            <h4>{tournament.venue && tournament.venue.address.city}</h4>
     </div>
   );
 }
