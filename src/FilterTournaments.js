@@ -39,6 +39,7 @@ async function getTournaments() {
   let inputCountry = document.getElementById("input-country").value;
   let inputCity = document.getElementById("input-city").value;
   let inputDistance = document.getElementById("input-distance").value;
+  let inputDate = document.getElementById("input-date").value;
 
   let url = api;
 
@@ -59,7 +60,10 @@ async function getTournaments() {
   }
   if (inputDistance !== "") {
     url += `distance=${inputDistance}&latitude=${userLatitude}&longitude=${userLongitude}&`;
-  }  
+  }
+  if (inputDate !== "") {
+    url += `date=${inputDate}&`;
+  }
 
   url = url.slice(0, -1);
   console.log(url);
@@ -88,6 +92,7 @@ async function getTournaments() {
         Tournament Country <input type="text" id="input-country"/> 
         Tournament City <input type="text" id="input-city"/> 
         Tournament Distance <input type="text" id="input-distance"/>
+        Tournament Date <input type="date" id="input-date"/>
         <button className="search-btn" onClick={ getTournaments }>
         Search</button>
         <button className="search-btn" onClick={clearSearchFields}>
