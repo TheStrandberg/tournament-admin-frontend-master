@@ -63,7 +63,7 @@ body {
 }
 
 .input {
-  max-width: 1700px;
+  max-width: 1600px;
   width: auto;
   margin-left: 110px;
   /* background-color: red; */
@@ -85,8 +85,9 @@ input {
 .search-btn {
   background-color: white;
   height: 44px;
-  width: 12rem;
+  width: 11rem;
   margin-right: 1rem;
+  margin-top: 1rem;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 

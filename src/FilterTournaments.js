@@ -28,13 +28,18 @@ function FilterTournaments() {
     getLocation();
   }, []);
 
-async function GetTournaments() {    
+  useEffect(() => {
+    getTournaments();
+  }, []);
+
+async function getTournaments() {    
   let inputName = document.getElementById("input-name").value;
   let inputGame = document.getElementById("input-game").value;
   let inputVenue = document.getElementById("input-venue").value;
   let inputCountry = document.getElementById("input-country").value;
   let inputCity = document.getElementById("input-city").value;
   let inputDistance = document.getElementById("input-distance").value;
+  let inputDate = document.getElementById("input-date").value;
 
   let url = api;
 
@@ -55,7 +60,10 @@ async function GetTournaments() {
   }
   if (inputDistance !== "") {
     url += `distance=${inputDistance}&latitude=${userLatitude}&longitude=${userLongitude}&`;
-  }  
+  }
+  if (inputDate !== "") {
+    url += `date=${inputDate}&`;
+  }
 
   url = url.slice(0, -1);
   console.log(url);
@@ -69,7 +77,7 @@ async function GetTournaments() {
     setTournaments(tournamentArray);   
   }
 
-  function ClearSearchFields() {
+  function clearSearchFields() {
     document.querySelectorAll("input").forEach((element) => {
       element.value = "";
     })
@@ -85,10 +93,12 @@ async function GetTournaments() {
         <input type="text" id="input-venue" placeholder="Venue"/> 
         <input type="text" id="input-country" placeholder="Country"/> 
         <input type="text" id="input-city" placeholder="City"/> 
+        <input type="date" id="input-startdate" placeholder="Start Date"/>
+        <input type="date" id="input-enddate" placeholder="End Date"/>
         <input type="text" id="input-distance" placeholder="Distance from your location"/>
-        <button className="search-btn" onClick={ GetTournaments }>
+        <button className="search-btn" onClick={ getTournaments }>
         Search</button>
-        <button className="search-btn" onClick={ClearSearchFields}>
+        <button className="search-btn" onClick={clearSearchFields}>
         Clear Search Fields</button>
         </div>
         <DisplayTournaments  tournaments={tournamentState}/>
