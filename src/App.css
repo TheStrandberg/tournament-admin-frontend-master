@@ -1,6 +1,7 @@
 body {
   background: url("/images/background.jpg");
   background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .headers {
@@ -73,10 +74,10 @@ body {
 }
 
 .input {
-  max-width: 1600px;
+  max-width: 1510px;
   width: auto;
-  margin-left: 110px;
-  /* background-color: red; */
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 3rem;
 }
 
@@ -96,15 +97,37 @@ input {
 }
 
 .search-btn {
-  background-color: white;
+  background: linear-gradient(to right bottom, rgb(27, 27, 156), rgb(92, 168, 231));
   height: 44px;
   width: 11rem;
   margin-right: 1rem;
   margin-top: 1rem;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  border-radius: 1rem;
+  color: white;
 }
 
 .search-btn:hover {
   background-color: rgb(219, 219, 219);
+}
+
+.tournament-detail {
+  color: white;
+  max-width: 1000px;
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10rem;
+}
+
+#back-button {
+  background: linear-gradient(to right bottom, rgb(27, 27, 156), rgb(92, 168, 231));
+  height: 44px;
+  width: 11rem;
+  margin-right: 1rem;
+  margin-top: 1rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  border-radius: 1rem;
+  color: white;
 }
 

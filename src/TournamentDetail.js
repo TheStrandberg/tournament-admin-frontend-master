@@ -23,7 +23,7 @@ function TournamentDetail() {
 
   return (
     <div className="tournament-detail">
-      <Link to="/"><button> Back </button></Link>
+  
       <h1>{tournament.tournamentName}</h1>
             <h2>{tournament.game && tournament.game.title}</h2>
             <p>{tournament.description}</p>
@@ -38,6 +38,7 @@ function TournamentDetail() {
                 </li>
               ))}
             </ul>
+            <Link to="/"><button id="back-button">Back To Search Page</button></Link>
     </div>
   );
 }
