@@ -6,27 +6,11 @@ function TournamentComponent( { tournamentName, game, description, eventTime, ve
     return (
         <div className="single-tournament">
             <h1>{tournamentName}</h1>
-            <h2>{game.title}</h2>
+            <h2>{game && game.title}</h2>
             <p>{description}</p>
             <h3>{eventTime}</h3>
-            <h4>{venue.address.city}</h4>
-            <h4>{venue.address.country}</h4>
-
-            {/* <h1>{tournamentName}</h1>
-            <h2>{game.title}</h2>
-            <p>{description}</p>
-            <h3>{eventTime}</h3>
-            <h4>{venue.venueName}</h4> 
-            <h4>{venue.address.street}</h4>
-            <h4>{venue.address.city}</h4>
-            <h4>{venue.address.country}</h4>
-            <div className="player-list">
-                <ul>
-                    <li>
-                        <h5>{player}</h5>
-                    </li>
-                </ul>
-            </div> */}
+            <h4>{venue && venue.address.city}</h4>
+            <h4>{venue && venue.address.country}</h4>
         </div>
     )
 }

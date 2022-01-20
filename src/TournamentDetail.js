@@ -1,56 +1,49 @@
-import React from 'react'
+import React from "react";
 import { Link, useParams } from "react-router-dom";
-import { useState, useEffect } from 'react';
-import DisplayTournaments from './DisplayTournaments';
+import { useState, useEffect } from "react";
+import TournamentComponent from "./TournamentComponent";
 
 function TournamentDetail() {
-    let { id } = useParams();
-    console.log(id);
-
-    const [tournament, setTournament] = useState({});
-
-    useEffect(() => {
-        async function getTournament() {
-            const response = await fetch ("https://localhost:44335/api/Tournaments/" + id, {
-                method: 'GET',
-                headers: {'Content-Type': 'application/json'},
-                })
-                const tournamentArray = await response.json();
-                console.log(tournamentArray);
-                setTournament(tournamentArray);  
+  let { id } = useParams();
+  const [tournament, setTournament] = useState({});
+  useEffect(() => {
+    async function getTournament() {
+      const response = await fetch(
+        "https://localhost:44335/api/Tournaments/" + id,
+        {
+          method: "GET",
+          headers: { "Content-Type": "application/json" },
         }
-        getTournament();
-      }, []);    
+      );
+      const tournamentObject = await response.json();
+      console.log(tournamentObject);
+      setTournament(tournamentObject);
+      // convertTournament();
+    }
+    getTournament();
+  }, []);
 
-    return (
-        <div>
-        {/* <Link to="/"><button> Back </button></Link> */}
-        <h1>Tournament Detail</h1>
-        <h1>{tournament.tournamentName}</h1>
-        <h2>{tournament.game.title}</h2>
-        <p>{tournament.description}</p>
-        <h3>{tournament.eventTime}</h3>   
-        <h4>{tournament.venue.venueName}</h4> 
-        <h4>{tournament.venue.address.street}</h4>
-        <h4>{tournament.venue.address.city}</h4>
-        <h4>{tournament.venue.address.country}</h4>
+  // function convertTournament(searchObject) {
+  //   return {
+  //     id: searchObject.id,
+  //     tournamentName: searchObject.tournamentName,
+  //     description: searchObject.description,
+  //     game: searchObject.game,
+  //     eventTime: searchObject.eventTime.toString().slice(0, 10),
+  //     venue: searchObject.venue,
+  //   }
+  // }
 
-        {/* <h2>{tournamentState[id].game.title}</h2>
-        <p>{tournamentState[id].description}</p>
-        <h3>{tournamentState[id].eventTime}</h3>   
-        <h4>{tournamentState[id].venue.venueName}</h4> 
-        <h4>{tournamentState[id].venue.address.street}</h4>
-        <h4>{tournamentState[id].venue.address.city}</h4>
-        <h4>{tournamentState[id].venue.address.country}</h4> */}
-        {/* <div className="player-list">
-                <ul>
-                    <li>
-                        <h5>{tournamentState[id].player}</h5>
-                    </li>
-                </ul>
-            </div>  */}
-        </div>
-    )
+  return (
+    <div>
+      <Link to="/"><button> Back </button></Link>
+        <TournamentComponent tournamentName={tournament.tournamentName} 
+        description={tournament.description} 
+        eventTime={tournament.eventTime} 
+        venue={tournament.venue}
+        game={tournament.game && tournament.game.title}/>
+    </div>
+  );
 }
 
 export default TournamentDetail
