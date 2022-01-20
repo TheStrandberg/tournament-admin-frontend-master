@@ -98,9 +98,9 @@ async function getTournaments() {
         <input type="text" id="input-venue" placeholder="Venue"/> 
         <input type="text" id="input-country" placeholder="Country"/> 
         <input type="text" id="input-city" placeholder="City"/> 
-        <input type="date" id="input-fromDate" placeholder="Start Date"/>
-        <input type="date" id="input-toDate" placeholder="End Date"/>
-        <input type="text" id="input-distance" placeholder="Distance from your location"/>
+        <input type="date" id="input-fromDate"/>
+        <input type="date" id="input-toDate"/>
+        <input type="number" id="input-distance" placeholder="Distance from your location (km)"/>
         <button className="search-btn" onClick={ getTournaments }>
         Search</button>
         <button className="search-btn" onClick={clearSearchFields}>

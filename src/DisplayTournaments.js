@@ -15,6 +15,7 @@ function DisplayTournaments( { tournaments }) {
         <h1 id="header-city">City</h1>
         <h1 id="header-country">Country</h1>
       </div>
+      <p>(Click on tournament for more info)</p>
       {tournaments.map((tournament) => {
         return <Link to={`/${tournament.id}`} key={tournament.id}> 
         <TournamentComponent tournamentName={tournament.tournamentName} 
