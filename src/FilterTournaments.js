@@ -92,26 +92,15 @@ async function getTournaments() {
         <div>
         
         <div className="input">
-<<<<<<< Updated upstream
         <p>Filter options...</p>
         <input type="text" id="input-name" placeholder="Tournament Name"/> 
         <input type="text" id="input-game" placeholder="Game"/> 
         <input type="text" id="input-venue" placeholder="Venue"/> 
         <input type="text" id="input-country" placeholder="Country"/> 
         <input type="text" id="input-city" placeholder="City"/> 
-        <input type="date" id="input-startdate" placeholder="Start Date"/>
-        <input type="date" id="input-enddate" placeholder="End Date"/>
+        <input type="date" id="input-fromDate" placeholder="Start Date"/>
+        <input type="date" id="input-toDate" placeholder="End Date"/>
         <input type="text" id="input-distance" placeholder="Distance from your location"/>
-=======
-        Tournament Name <input type="text" id="input-name"/> 
-        Tournament Game <input type="text" id="input-game"/> 
-        Tournament Venue <input type="text" id="input-venue"/> 
-        Tournament Country <input type="text" id="input-country"/> 
-        Tournament City <input type="text" id="input-city"/> 
-        Tournament Distance <input type="text" id="input-distance"/>
-        Tournament Date from <input type="date" id="input-fromDate"/>
-        Tournament Date to <input type="date" id="input-toDate"/>
->>>>>>> Stashed changes
         <button className="search-btn" onClick={ getTournaments }>
         Search</button>
         <button className="search-btn" onClick={clearSearchFields}>
