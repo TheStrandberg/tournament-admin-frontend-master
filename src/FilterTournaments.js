@@ -28,7 +28,11 @@ function FilterTournaments() {
     getLocation();
   }, []);
 
-async function GetTournaments() {    
+  useEffect(() => {
+    getTournaments();
+  }, []);
+
+async function getTournaments() {    
   let inputName = document.getElementById("input-name").value;
   let inputGame = document.getElementById("input-game").value;
   let inputVenue = document.getElementById("input-venue").value;
@@ -69,7 +73,7 @@ async function GetTournaments() {
     setTournaments(tournamentArray);   
   }
 
-  function ClearSearchFields() {
+  function clearSearchFields() {
     document.querySelectorAll("input").forEach((element) => {
       element.value = "";
     })
@@ -84,9 +88,9 @@ async function GetTournaments() {
         Tournament Country <input type="text" id="input-country"/> 
         Tournament City <input type="text" id="input-city"/> 
         Tournament Distance <input type="text" id="input-distance"/>
-        <button className="search-btn" onClick={ GetTournaments }>
+        <button className="search-btn" onClick={ getTournaments }>
         Search</button>
-        <button className="search-btn" onClick={ClearSearchFields}>
+        <button className="search-btn" onClick={clearSearchFields}>
         Clear</button>
         </div>
         <DisplayTournaments  tournaments={tournamentState}/>
