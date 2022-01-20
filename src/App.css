@@ -32,6 +32,7 @@ body {
   display: flex;
   align-items: center;
   max-width: 1700px;
+  margin-top: 1px;
 }
 
 .single-tournament:hover {
@@ -45,32 +46,57 @@ body {
 }
 
 #name {
-  width: 35rem;
-  font-size: 1rem;
+  width: 30rem;
   margin-left: 2rem;
+}
+
+#game {
+  width: 22rem;
+}
+
+#eventtime {
+  width: 8rem;
+} 
+
+#venue {
+  width: 15rem;
+}
+
+#city, #country {
+  width: 20rem;
+}
+
+#name, #game, #eventtime, #venue, #city, #country {
+  margin-right: 1rem;
+  font-size: 1rem;
+  line-break: normal;
+  word-break: break-all;
 }
 
 #header-name {
   margin-left: 2rem;
-  width: 30.3rem; 
-}
-
-#game {
-  width: 25rem;
-  font-size: 1rem;
+  width: 26.7rem;
+ 
 }
 
 #header-game {
-  width: 21.5rem;
+  width: 19.6rem;
+
 }
 
-#eventtime, #venue, #city, #country {
-  width: 15rem;
-  font-size: 1rem;
+#header-date {
+  width: 8rem;
+
 }
 
-#header-date, #header-venue, #header-city, #header-country {
-  width: 13rem;
+#header-venue {
+  width: 13.4rem;
+
+}
+
+#header-city, #header-country {
+  width: 18rem;
+
 }
 
 .input {
@@ -130,4 +156,3 @@ input {
   border-radius: 1rem;
   color: white;
 }
-
