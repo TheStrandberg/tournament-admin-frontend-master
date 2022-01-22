@@ -1,12 +1,11 @@
-import React from 'react'
-import TournamentComponent from './TournamentComponent';
-import { Link } from 'react-router-dom';
-import "./App.css"
+import React from "react";
+import TournamentComponent from "./TournamentComponent";
+import { Link } from "react-router-dom";
+import "./App.css";
 
-function DisplayTournaments( { tournaments }) {
-
+function DisplayTournaments({ tournaments }) {
   return (
-      <div className="tournament-list">
+    <div className="tournament-list">
       <div className="headers">
         <h1 id="header-name">Name</h1>
         <h1 id="header-game">Game</h1>
@@ -17,15 +16,19 @@ function DisplayTournaments( { tournaments }) {
       </div>
       <p>(Click on tournament for more info)</p>
       {tournaments.map((tournament) => {
-        return <Link to={`/${tournament.id}`} key={tournament.id}> 
-        <TournamentComponent tournamentName={tournament.tournamentName} 
-        eventTime={tournament.eventTime.toString().slice(0, 10)} 
-        venue={tournament.venue}
-        game={tournament.game}/>
-        </Link>
+        return (
+          <Link to={`/${tournament.id}`} key={tournament.id}>
+            <TournamentComponent
+              tournamentName={tournament.tournamentName}
+              eventTime={tournament.eventTime.toString().slice(0, 10)}
+              venue={tournament.venue}
+              game={tournament.game}
+            />
+          </Link>
+        );
       })}
-      </div>
-    );
-  }
+    </div>
+  );
+}
 
-export default DisplayTournaments
+export default DisplayTournaments;

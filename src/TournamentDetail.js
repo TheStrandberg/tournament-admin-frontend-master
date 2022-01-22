@@ -23,24 +23,32 @@ function TournamentDetail() {
 
   return (
     <div className="tournament-detail">
-  <Link to="/"><button id="back-button">Back To Search Page</button></Link>
+      <Link to="/"><button id="back-button">Back To Search Page</button></Link>
       <h1>{tournament.tournamentName}</h1>
-            <h2>{tournament.game && tournament.game.title}</h2>
-            <p>{tournament.description}</p>
-            <h3>{tournament.eventTime && tournament.eventTime.toString().slice(0, 10)}</h3>
-            <h4>{tournament.venue && tournament.venue.venueName} ({tournament.venue && tournament.venue.address.street})</h4>
-            <h4>{tournament.venue && tournament.venue.address.city}</h4>
-            <h4>{tournament.venue && tournament.venue.address.country}</h4>
-            <ul className="player-list">
-              {tournament.players && tournament.players.map((player) => (
-                <li>
-                  <h3 key={player.id}>{player && player.firstName} {player && player.lastName} ({player && player.gameHandle}) - {player && player.homeTown} ({player && player.countryOfOrigin})</h3>
-                </li>
-              ))}
-            </ul>
-            <Link to="/"><button id="back-button">Back To Search Page</button></Link>
+      <h2>{tournament.game && tournament.game.title}</h2>
+      <p>{tournament.description}</p>
+      <h3>{tournament.eventTime && tournament.eventTime.toString().slice(0, 10)}</h3>
+      <h4>
+        {tournament.venue && tournament.venue.venueName} (
+        {tournament.venue && tournament.venue.address.street})
+      </h4>
+      <h4>{tournament.venue && tournament.venue.address.city}</h4>
+      <h4>{tournament.venue && tournament.venue.address.country}</h4>
+      <ul className="player-list">
+        {tournament.players &&
+          tournament.players.map((player) => (
+            <li>
+              <h3 key={player.id}>
+                {player && player.firstName} {player && player.lastName} (
+                {player && player.gameHandle}) - {player && player.homeTown} (
+                {player && player.countryOfOrigin})
+              </h3>
+            </li>
+          ))}
+      </ul>
+      <Link to="/"><button id="back-button">Back To Search Page</button></Link>
     </div>
   );
 }
 
-export default TournamentDetail
+export default TournamentDetail;
